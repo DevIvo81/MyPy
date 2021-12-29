@@ -1,10 +1,223 @@
 import os
 os.system('cls')
 
-### 5. LOOPS
+### 8. STRINGS
+
+state = 'Mississippi'
+theLength = len(state)
+print(theLength)
+print(state[0])
+print(state[1])
+print(state[2])
+print(state[3])
+
+myString = ''
+print(len(myString))
+
+counter = 0
+
+print('\nwhile PRINT\n')
+while counter < theLength:
+    print(state[counter])
+    counter += 1
+
+print('\nfor PRINT\n')
+for letter in state:
+    print(letter)
+    
+
+
+'''
+
+### 7. LISTS
 
 ######
-# MadLib (version 5)
+
+# 7.6 PIZZA TOPPINGS
+
+print('\n a or add: Adds a topping \
+        \n c or change: Changes a topping \
+            \n o or order: Orders the current pizza \
+                \n r or remove: Removes a topping \
+                    \n s or startover: Starts the current pizza over\n')
+
+def showPizzaToppings(someList):
+    if len(someList) == 0:
+        print('\nNo toppings on your pizza...\n')
+    else:
+        print('\nYour pizza toppings: \n')
+        for thisItem in someList:
+            print(f'-- {thisItem}\n')
+
+toppingsList = [] # start as an empty list
+
+while True:
+    os.system('cls')
+    showPizzaToppings(toppingsList)
+    print('\nWhat would you like to do?')
+    menuChoice = input('\n    add, change, order, remove, startover: ').lower()
+    
+    if menuChoice =='a' or menuChoice == 'add':
+        newTopping = input('\nType a topping to add: ')
+        toppingsList.append(newTopping) # adds item to list end
+    
+    elif menuChoice =='c' or menuChoice == 'change':
+        oldTopping = input('\nWhat topping to change: ').lower()
+        
+        if oldTopping in toppingsList:
+            index = toppingsList.index(oldTopping)
+            newTopping = input('\nWhat is new topping: ')
+            toppingsList[index] = newTopping
+        else:
+            print(f'\nThe topping {oldTopping} was not found!')
+    
+    elif menuChoice =='o' or menuChoice == 'order':
+        print('\nThanks for your order!\n')
+        
+        if input('\nWould you like to order \
+                    \nanother pizza [y/n]: ').lower() == 'y':
+            toppingsList = []
+        else:
+            print('\nFAREWELL!\n')
+            break
+    
+    elif menuChoice =='r' or menuChoice == 'remove':
+        delTopping = input('\nWhich topping to remove: ')
+        if delTopping in toppingsList:
+            delIndex = toppingsList.index(delTopping)
+            toppingsList.pop(delIndex)
+        else:
+            print(f'\nThe topping {delTopping} was not found!')
+    
+    elif menuChoice =='s' or menuChoice == 'startover':
+        print("\nOK, let's start over!")
+        toppingsList = []
+    else:
+        print("\nI'm not sure that I understand... Try again.")
+   
+
+
+######
+
+# 7.5 INVENTORY LIST
+
+inventoryList = []
+
+inventoryList.append('treasure')
+print(inventoryList)
+
+inventoryList.append('magic stones')
+print(inventoryList)
+
+inventoryList.append('potion')
+print(inventoryList)
+
+print('magic stones' in inventoryList)
+indexOfStones = inventoryList.index('magic stones')
+itemToThrowOut = inventoryList.pop(indexOfStones)
+print(inventoryList)
+print(itemToThrowOut)
+
+
+
+######
+
+# 7.4 ROLL DICE FOR DOUBLES
+
+print('\nROLL DICE FOR DOUBLES\n')
+
+def rollOneDie():
+    import random as r
+    #generate random number 1 - 6
+    thisFace = r.randrange(1, 7)
+    return thisFace
+
+while True:
+        
+    nDoubles = 0
+    
+    maxRounds = input('\nHow many rounds? (Or ENTER to quit):--> ')
+    if maxRounds == '':
+        print('\nGOODBYE\n')
+        break
+    try:
+        maxRounds = int(maxRounds)
+    except:
+        print('\nPlease enter integer number!')
+        continue
+
+    for i in range(maxRounds):
+        firstDie = rollOneDie()
+        secondDie = rollOneDie()
+        
+        if firstDie == secondDie:
+                nDoubles += 1
+
+    percent = (nDoubles * 100) / maxRounds
+
+    print(f'\nOut of {maxRounds} round you rolled {nDoubles} doubles.\
+            \nThat is {percent}% !')
+    
+
+
+######
+
+# 7.3 CALCULATE AND PRINT TOTAL OF INTEGERS UP TO USER INPUT
+
+print(f'\nCALCULATE AND PRINT TOTAL\nOF INTEGERS UP TO USER INPUT')
+userNumber = int(input('\nPlease enter an integer: '))
+highEnd = userNumber + 1
+
+total = 0
+
+for i in range(1, highEnd):
+    total += i
+print(f'\nTotal of numbers from 1 to {userNumber} is {total}\n')
+
+
+######
+
+# 7.2 TOTAL OF NUMBERS IN LIST
+
+numbersList = [23, -10, 37, 4.5, 0, 123.4]
+print(f'\nWe will calculate total of these numbers\n\n\t{numbersList}')
+# Calculate the total of numbers in list
+total = 0
+for number in numbersList:
+    total += number
+print(f'\nThe total of all numbers in list is: {total}')
+
+######
+
+teamMatesList = ['Ivo', 'Pero', 'Ana', 'Ivana']
+for t in teamMatesList:
+    print(f'Sretno {t}')
+
+######
+
+7.1. SHOPPING LIST ITERATION
+
+shoppingList = ['apples', 'bananas', 'cherries', 'dates', 'eggplant']
+nItems = len(shoppingList)
+myIndex = 0 # start with an index for zero'th element
+
+print('\nFOR LOOP print\n')
+for anItem in shoppingList:
+    print(anItem)
+
+print('\nCOMPREHENSIVE FOR LOOP print\n')
+print([shoppingList[i] for i in range(nItems)])
+
+print('\nWHILE LOOP print\n')
+while myIndex < nItems:
+    print(shoppingList[myIndex])
+    myIndex += 1
+
+
+
+######
+
+# 6.1 MadLib (version 5)
 
 def chooseRandomFromList(aList):
     import random as r
@@ -38,8 +251,8 @@ while True:
 print('\nGOODBYE')
 
 
+### 6. LOOPS
 
-'''
 ######
 
 print('\nTRY / EXCEPT')
