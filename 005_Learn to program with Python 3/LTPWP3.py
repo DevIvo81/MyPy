@@ -1,18 +1,36 @@
-import os, random
+import os
 os.system('cls')
 
 ### 5. LOOPS
 
 ######
-# MadLib (version 1)
+# MadLib (version 5)
+
+def chooseRandomFromList(aList):
+    import random as r
+    nItems = len(aList)
+    randomIndex = r.randrange(0, nItems)
+    randomElement = aList[randomIndex]
+    return randomElement
+
+namesList = ['Weird Al Yankovic', 'Teenage Mutant Ninja Turtles', 
+             'Supergirl', 'Stay Puft Marshmallow Man', 
+             'Shrek', 'Sherlock Holmes', 'The Beatles', 
+             'Powerpuff Girl', 'Pillsburry Doughboy', 'Sam-I-Am']
+verbsList = ['screamed', 'burped', 'ran', 'galumphed', 'rolled', 
+             'ate', 'laughed', 'complained', 'whistled']
+adjectivesList = ['purple', 'giant', 'lazy', 'curly-haired', 
+                  'wireless electric', 'ten foot tall']
+nounsList = ['ogre', 'dinosaur', 'Frisbee', 'robot', 'staple gun', 
+             'hot dog vendor', 'tortoise', 'rodeo clown', 'unicorn', 'Santa hat', 'garbage can']
 
 while True:
-    name = input('\nEnter a name: ')
-    verb = input('\nEnter a verb: ')
-    adjective = input('\nEnter an adjective: ')
-    noun = input('\nEnter a noun: ')
+    name = chooseRandomFromList(namesList)
+    verb = chooseRandomFromList(verbsList)
+    adjective = chooseRandomFromList(adjectivesList)
+    noun = chooseRandomFromList(nounsList)
     
-    sentence = f'\n{name} {verb} through the forest, hoping to escape\nthe {adjective} {noun}'
+    sentence = f'\n{name} {verb} through the forest, hoping to escape\nthe {adjective} {noun}!'
     print(sentence)
     
     if input('\n"q" to quit or anything else to continue: ').lower() == 'q':
