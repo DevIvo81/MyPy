@@ -172,6 +172,7 @@ def TicTacToe():
             break
 
 TicTacToe()
+input()
 
 
     

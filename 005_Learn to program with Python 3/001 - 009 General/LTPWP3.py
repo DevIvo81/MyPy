@@ -1,8 +1,71 @@
 import os
 os.system('cls')
 
+### 9. FILE INPUT / OUTPUT -- I/O
+
+os.getcwd()
+
+'''
+
 ### 8. STRINGS
 
+######
+
+fullName = input('\nPlease enter your full name: ')
+
+indexOfSpace = fullName.index(' ')
+
+firstName = fullName[ : indexOfSpace]
+lastName = fullName[ indexOfSpace + 1 : ]
+print(f'\nYour full name is {firstName} {lastName}')
+
+
+def countCharInString(findChar, targetString):
+    count = 0
+    for letter in targetString:
+        if findChar == letter:
+            count += 1
+    return count
+
+print(countCharInString('s', 'Mississippi'))
+print()
+print(countCharInString('p', 'Mississippi'))
+print()
+print(countCharInString('q', 'Mississippi'))
+print()
+
+
+######
+
+sample = 'This is a sample string'
+print(sample[ 10 : ])
+print(sample[  : 16 ])
+print(sample[ : ])
+print(sample[ : -7])
+
+######
+
+# 8.1 CREATE A SLICE
+
+months = 'JanFebMarAprMayJunJulAugSepOctNovDec'
+monthNumber = int(input('\n Type a month number [1-12]: '))
+
+
+startIndex = (monthNumber - 1) * 3
+endIndex = startIndex + 3
+
+monthAbbrev = months[startIndex : endIndex]
+print(monthAbbrev)
+
+
+######
+
+myName = 'Ivo Zelić'
+
+print(myName[:3])
+
+nChars = len(myName)
+print(myName[4:nChars])
 state = 'Mississippi'
 theLength = len(state)
 print(theLength)
@@ -27,7 +90,6 @@ for letter in state:
     
 
 
-'''
 
 ### 7. LISTS
 
