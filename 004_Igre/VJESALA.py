@@ -133,7 +133,8 @@ def igra():
             grafika(-1)
             break
 
-igra()       
+igra()
+input()    
 
 
 
