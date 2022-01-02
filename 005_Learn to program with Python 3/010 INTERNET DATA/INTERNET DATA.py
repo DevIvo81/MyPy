@@ -1,7 +1,7 @@
 # INTERNET DATA
 
-# Getting a stock quote
-import urllib.request
+import urllib.request, os
+os.system('cls')
 
 # api key provided from www.alphavantage.co
 API_KEY = '53dc38be76a9813295dde8dc69ad9daa'
@@ -45,7 +45,8 @@ while True:
     tempK = getInfo(city)
     # Temperature conversion
     tempC = convertKtoC(tempK)        
-    print(f'\nThe temperature of {city} is {tempC}°C\n')
+    print(f'\nThe temperature of {city} is {round(tempC, 1)}°C\n')
+
 
 print('\nFAREWELL!\n')
     
