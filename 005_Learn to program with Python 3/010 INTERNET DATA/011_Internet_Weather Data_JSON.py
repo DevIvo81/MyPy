@@ -1,4 +1,4 @@
-# INTERNET DATA - XML
+# INTERNET DATA - JSON
 
 import os, json, urllib.request as urlRe
 os.system('cls')
@@ -7,7 +7,7 @@ os.system('cls')
 API_KEY = '53dc38be76a9813295dde8dc69ad9daa'
 
 def getInfo(city):
-    urlAndParams = f'http://api.openweathermap.org/data/2.5/weather?q={city}&mode=xml&APPID={API_KEY} '
+    urlAndParams = f'http://api.openweathermap.org/data/2.5/weather?q={city}&mode=json&APPID={API_KEY} '
       
     print(f'\nSending URL: {urlAndParams}')
 
@@ -15,7 +15,7 @@ def getInfo(city):
     connection = urlRe.urlopen(urlAndParams)
     
     # Make a request and save the response as string
-    responseString = connection.read()
+    responseString = connection.read().decode()
     print(responseString)
     
     '''
