@@ -10,7 +10,8 @@ jednim TABom, a druge informacije formatirajte tako da
 prvi red tablice predstavlja naslovni red, 
 a ostali redovi tablice predstavljaju podatke iz baze.
 '''
-
+import os
+os.system('cls')
 
 baza_vozila = {
     1: ['Kamion', 'Iveco', 'OS 001 ZZ', 2015, 45000.99],
@@ -19,21 +20,25 @@ baza_vozila = {
     4: ['Tegljac', 'MAN', 'RI 002 ZZ', 2020, 97000.99],
     5: ['Kombi', 'Mercedes Benz', 'ST 001 ZZ', 2013, 12000.99],
     6: ['Kombi', 'Volkswagen', 'ST 002 ZZ', 2021, 35000.99],
-    7: ['Dostavno vozilo', 'Volkswagen', 'ZG 001 ZZ', 2010, 9000.99],
-    8: ['Dostavno vozilo', 'Volkswagen', 'ZG 002 ZZ', 2010, 9300.99]
+    7: ['Dostavno', 'Volkswagen', 'ZG 001 ZZ', 2010, 9000.99],
+    8: ['Dostavno', 'Volkswagen', 'ZG 002 ZZ', 2010, 9300.99]
 }
 
-# print(f'ID\tTip\tProizvođač\tRegistarska\tGodina prve\tCijena u EUR')
-# print(f'\t\t\t\toznaka\t\tregistracije\tCijena u EUR')
+print(f'ID\tTip\t\tProizvođač\tRegistarska\tGodina prve\tCijena u EUR')
+print(f'\t\t\t\t\toznaka\t\tregistracije\n')
 
 for id, vozilo in baza_vozila.items():
-    print(f'{id}', end=' ')
+    print(f'{id}', end='\t')
     for podatak_o_vozilu in vozilo:
-        print(f'{podatak_o_vozilu}', end=' ')
+        if len(str(podatak_o_vozilu)) <= 7:
+            print(f'{podatak_o_vozilu}', end='\t\t')
+        else:
+            print(f'{podatak_o_vozilu}', end='\t')
     print()
 
 
-broj_novih_vozila = int(input('Upisite koliko vozila zelite dodati? '))
+broj_novih_vozila = int(input('\nUpisite koliko vozila zelite dodati? --> '))
+
 for i in range(broj_novih_vozila):
     id = len(baza_vozila) + 1
     vozilo = []
