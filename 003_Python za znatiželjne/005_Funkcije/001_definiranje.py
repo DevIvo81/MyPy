@@ -1,17 +1,16 @@
-from multiprocessing.connection import wait
-import os, time
+import os, time, locale
+import datetime as dt
+locale.setlocale(locale.LC_ALL, 'hrv')
 
-from cv2 import waitKey
-
+#region SAT I DATUM
+'''
 def točno_vrijeme():
-    from datetime import datetime as dt
     
-    vrijeme = dt.now()
-    sati = vrijeme.hour
-    minute = vrijeme.minute
-    sekunde = vrijeme.second
+    datum = dt.date.today()
     
-    print(f'\n{sati} h {minute} min {sekunde} s\n')
+    sada = dt.datetime.now()
+    datum_i_vrijeme = f'\n{sada.strftime("%B")}\t{sada.strftime("%d.%m.%Y. %H:%M:%S")}'
+    print(datum_i_vrijeme)
     
 
     
@@ -21,8 +20,23 @@ while True:
     točno_vrijeme()
 
     time.sleep(1)
+'''
+#endregion
 
-    if not input():
-        break
+
+
+#region KOCKICA
+
+def kocka():
+    from random import randint as rnt
+    print(f'\nRezultat = {rnt(1,6)}')
+
+
+os.system('cls' if os.name == 'nt' else 'clear')
     
-    
+for i in range(10):
+    kocka()
+
+
+
+#endregion
