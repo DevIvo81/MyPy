@@ -36,14 +36,15 @@ print()
 
 
 for id, vozilo in baza_vozila.items():
+    
     print(f'{id}', end='\t')
-    if len(vozilo) <= 7:
-        for podatak_o_vozilu in vozilo:
-            print('\t')
-            print(podatak_o_vozilu)
-    else:
+    
+    for podatak_o_vozilu in vozilo:
         
-        print()
+            print(f'{podatak_o_vozilu}', end='\t')
+        else:
+            print(f'{podatak_o_vozilu}', end=' ')    
+        
 
 # broj_novih_vozila = int(input('Upišite koliko vozila želite  unijeti: '))
 # for i in range(broj_novih_vozila):

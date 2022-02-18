@@ -17,7 +17,7 @@ def sakrij_znakove(tekst):
                 indeks += 1
             else:
                 zasticeni_tekst += znak
-                indeks
+                indeks += 1
     return zasticeni_tekst
 
 kartica = input('\nUpišite broj Vaše kartice: ')

@@ -1,0 +1,40 @@
+{
+  "ŠEPURINE": {
+    "gorivo": 1500,
+    "smještaj": 500,
+    "cestarina": 500,
+    "dnevni budžet": 200,
+    "hrana": 2000,
+    "sadržaji": 1000,
+    "TOTAL": 5700
+  },
+  "KUTINA": {
+    "gorivo": 600,
+    "smještaj": 100,
+    "cestarina": 100,
+    "dnevni budžet": 300,
+    "hrana": 200,
+    "sadržaji": 400,
+    "TOTAL": 1700
+  },
+  "TRAKOŠĆAN": {
+    "gorivo": 700,
+    "smještaj": 100,
+    "cestarina": 150,
+    "dnevni budžet": 300,
+    "hrana": 100,
+    "sadržaji": 300,
+    "TOTAL": 1650
+  }
+}
+{
+  "KUTINA": {
+    "gorivo": 500,
+    "smještaj": 700,
+    "cestarina": 400,
+    "dnevni budžet": 9,
+    "hrana": 78,
+    "sadržaji": 45,
+    "TOTAL": 1732
+  }
+}

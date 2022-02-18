@@ -1,0 +1,5 @@
+['PRVIĆ', [['gorivo', 34], ['smjestaj', 65], ['žižule', 76], ['TOTAL', 175]]]
+['ŠEPURINE', [['gorivo', 43], ['smjestaj', 76], ['TOTAL', 119]]]
+['ZADAR', [['gorivo', 34], ['smještaj', 76], ['cestarina', 89], ['TOTAL', 199]]]
+['TRAKOŠĆAN', [['gorivo', 65], ['smještaj', 78], ['hrana', 90], ['TOTAL', 233]]]
+['ZAPREŠIĆ', [['gorivo', 34], ['smještaj', 65], ['TOTAL', 99]]]
